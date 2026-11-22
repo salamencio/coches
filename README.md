@@ -1,41 +1,53 @@
 # N-640 · Porto → San Tirso
 
-Juego arcade de conducción en 3D (three.js) por el trazado real de la N-640 entre Porto y San Tirso de Abres (11,25 km, escala 1:1), con tráfico en ambos sentidos y modo online.
-
-## Jugar
-
-- **Escritorio:** W acelerar, S frenar, A D o ← → girar, **↑ ↓ cambiar de marcha** (caja manual de 6, con limitador a 7000 rpm). Espacio o clic para empezar.
-- **Móvil:** botones en pantalla (G+ y G− cambian de marcha).
-- Adelanta con cuidado: vienen coches de frente. Llega a San Tirso antes de que se acabe el tiempo.
+Juego arcade de conducción en 3D (three.js) sobre una ruta real cargada desde un archivo GPX, con tráfico, caja de 6 marchas, física con límite de agarre, minimapa y modo online para varios jugadores.
 
 ## Publicar en GitHub Pages
 
-1. Crea un repositorio nuevo en GitHub y sube el contenido de esta carpeta (`index.html`, `ruta/`, `README.md`).
-2. En el repositorio: **Settings → Pages → Build and deployment → Deploy from a branch**, rama `main`, carpeta `/ (root)`.
-3. En un minuto el juego estará en `https://TU_USUARIO.github.io/NOMBRE_REPO/`.
+1. Crea un repositorio y sube `index.html`, `ruta/` y `README.md`.
+2. **Settings → Pages → Deploy from a branch**, rama `main`, carpeta `/ (root)`.
+3. Abre `https://TU_USUARIO.github.io/NOMBRE_REPO/`.
 
-Para probarlo en local: `python3 -m http.server` dentro de la carpeta y abre `http://localhost:8000`.
+Local: `python3 -m http.server` en esta carpeta y abre `http://localhost:8000`.
 
-## Modo online
+## Menú
 
-Botón **🌐 Online** en el menú. Un jugador pulsa **Crear sala** y pasa el código de 4 letras; los demás lo escriben y pulsan **Unirse**. Se ven los coches y nombres de los demás y la posición en la carrera (el tráfico es local a cada jugador).
+- **Jugar en solitario** o **Crear sala / Unirse** con código de 4 letras (WebRTC con PeerJS, sin servidor propio; necesita https).
+- En la sala, el anfitrión elige ruta, nombres y tráfico y pulsa **Empezar carrera**. **Todos reciben la misma ruta y los mismos NPC** (el anfitrión simula el tráfico).
+- **Ruta:** carga GPX, KML (Google My Maps / Earth), GeoJSON o CSV (`lat,lon,altitud`). Se guarda en el navegador. Hay botones para invertir el sentido, volver a la ruta por defecto y poner nombre al inicio y al final.
+- **Controles:** se pueden cambiar uno a uno (se guardan en el navegador).
+- **Street View (opcional):** pega una API key de Google Maps (Maps JavaScript API, con la web autorizada en la clave) y durante la carrera aparece una ventana con la vista real de tu posición.
 
-Funciona con WebRTC a través de [PeerJS](https://peerjs.com) (sin servidor propio), así que necesita servirse por **https**, como en GitHub Pages. Con redes muy restrictivas puede no conectar.
+## Controles por defecto
 
-## Sonido
+| Acción | Tecla |
+|---|---|
+| Acelerar / frenar | W / S |
+| Girar | A D o ← → |
+| Subir / bajar marcha | ↑ / ↓ |
+| Freno de mano | Espacio |
+| Mirar atrás (mantener) | B |
+| Claxon | H |
+| Ráfagas | L |
+| Intermitentes izq. / der. / emergencia | Z / X / C |
+| Pausa (solo offline) | P |
 
-El motor está sintetizado con Web Audio (no es una grabación): 4 cilindros turbo estilo Hyundai N, con silbido del turbo, soplido al levantar el pie, petardeos en retención, pop al subir marcha y limitador de revoluciones. Se activa al empezar la partida.
+En móvil hay botones en pantalla.
 
-## Cambiar el trazado
+## Lo que hace el juego con tus rutas
 
-Con el botón **Cargar trazado** se puede subir otro GPX, GeoJSON o CSV (`lat,lon,altitud`). El trazado por defecto está en `ruta/N640-Porto-SanTirso.gpx` y también incrustado en `index.html` (constante `GPX_EMB`). El botón **Invertir sentido** cambia la dirección.
+- Quita automáticamente los tramos de ida y vuelta (cruces, salidas) y suaviza la línea.
+- Corrige el rumbo para que el coche no gire 360º, y recorta el terreno, árboles y casas que se cruzan con otras partes de la ruta.
+- No genera tráfico de frente en rotondas, tramos muy cerrados ni zonas donde la ruta se solapa. Puedes desactivarlo del todo en el menú (útil en autovías).
+- Quitamiedos metálicos solo en el exterior de curvas.
 
-## Ajustes rápidos (en `index.html`)
+## Física
 
-- Distancia de visión: `Fog(FC,300,7500)` y `PerspectiveCamera(...,9500)` en el bloque 3D. Redúcelas si va lento en el móvil.
-- `VMAX`: velocidad máxima (m/s, 69,4 = 250 km/h).
-- En `update()`: `.015` (giro del volante), `3.4` (estabilidad) y `7.5` (aceleración).
+Conducción arcade: el coche gira aunque aceleres o frenes, y gira más a baja velocidad. El freno de mano (Espacio) deja derrapar suavemente por encima de 30 km/h. Ajustes en `physStep()` de `index.html`: `.015` (giro), `3.4` (estabilidad), `2.2` (giro extra a baja velocidad).
 
 ## Notas
 
-El trazado sale de un GPX dibujado a mano, no es una medición oficial. El relieve a los lados, la vegetación y las casas se generan por código.
+- Sin daños no hay penalización de tiempo: si los daños llegan al 100 % el coche se queda parado unos segundos y se reinicia.
+- Los NPC (coches hasta 100 km/h, autobuses 90, camiones 80, bicis 30) frenan en curvas, adelantan cuando el carril contrario está libre y se paran si los chocas.
+- El sonido del motor está sintetizado (no es una grabación).
+- Las líneas y señales no se generan desde el archivo: los GPX de ejemplo no traen esa información.
