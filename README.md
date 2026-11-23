@@ -30,7 +30,8 @@ Local: `python3 -m http.server` en esta carpeta y abre `http://localhost:8000`.
 | Claxon | H |
 | Ráfagas | L |
 | Intermitentes izq. / der. / emergencia | Z / X / C |
-| Pausa (solo offline) | P |
+| Pausa / menú de pausa | P o Esc |
+| Marcha atrás | S con el coche parado |
 
 En móvil hay botones en pantalla.
 
@@ -41,9 +42,13 @@ En móvil hay botones en pantalla.
 - No genera tráfico de frente en rotondas, tramos muy cerrados ni zonas donde la ruta se solapa. Puedes desactivarlo del todo en el menú (útil en autovías).
 - Quitamiedos metálicos solo en el exterior de curvas.
 
+## Modo libre
+
+No hay punto A ni B: es un mapa para recorrer en los dos sentidos. Puedes dar la vuelta (el coche gira mucho a baja velocidad y hay marcha atrás). En los extremos de la ruta hay un tope. La casilla **Autovía** del menú pone dos carriles en el mismo sentido, sin tráfico de frente ni ciclistas.
+
 ## Física
 
-Conducción arcade: el coche gira aunque aceleres o frenes, y gira más a baja velocidad. El freno de mano (Espacio) deja derrapar suavemente por encima de 30 km/h. Ajustes en `physStep()` de `index.html`: `.015` (giro), `3.4` (estabilidad), `2.2` (giro extra a baja velocidad).
+El coche tiene rumbo propio y la cámara lo sigue (el coche gira la cámara). El ángulo del volante está limitado por el agarre, así que las curvas cerradas hay que tomarlas despacio, pero a baja velocidad gira mucho. El freno de mano (Espacio) deja derrapar suavemente. Ajustes en `physStep()` de `index.html`.
 
 ## Notas
 
