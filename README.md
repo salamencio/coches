@@ -42,9 +42,14 @@ En móvil hay botones en pantalla.
 - No genera tráfico de frente en rotondas, tramos muy cerrados ni zonas donde la ruta se solapa. Puedes desactivarlo del todo en el menú (útil en autovías).
 - Quitamiedos metálicos solo en el exterior de curvas.
 
-## Modo libre
+## Mapa y red de carreteras
 
-No hay punto A ni B: es un mapa para recorrer en los dos sentidos. Puedes dar la vuelta (el coche gira mucho a baja velocidad y hay marcha atrás). En los extremos de la ruta hay un tope. La casilla **Autovía** del menú pone dos carriles en el mismo sentido, sin tráfico de frente ni ciclistas.
+No hay punto A ni B: es un mapa para recorrer libremente. Si tu archivo tiene cruces, ramales o rotondas, el juego los une en una **red de carreteras conectadas** por la que puedes ir a cualquier lado (también por la hierba). Las partes del trazo que se dibujaron dos veces seguidas se funden en una sola carretera.
+
+- **Prioridad de los NPC:** en las rotondas ceden los que entran; en una T cede la carretera que se acaba; en un cruce completo cede la de menor longitud.
+- **Rotondas:** los NPC dan la vuelta en sentido antihorario y no hay tráfico de frente.
+- **Autovía:** la casilla del menú pone dos carriles en el mismo sentido, sin tráfico de frente ni ciclistas.
+- **Ajustes de tráfico (menú y pausa):** cantidad de NPC y proporción de coches, camiones, autobuses y bicis. En una sala solo los cambia el anfitrión. También se pueden ocultar los nombres sobre los coches.
 
 ## Física
 

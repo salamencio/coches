@@ -113,7 +113,9 @@ function rowPos(z,x){let i=Math.max(0,Math.min(N-1,Math.floor(z/SL)));const pc=P
  else{i=Math.floor(z/SL);const f=z/SL-i;h=PH[i]+(PH[i+1]-PH[i])*f;X=PXa[i]+(PXa[i+1]-PXa[i])*f;Z=PZa[i]+(PZa[i+1]-PZa[i])*f;yy=Y[i]+(Y[i+1]-Y[i])*f}
  return{x:X+Math.cos(h)*x,z:-(Z-Math.sin(h)*x),y:yy,h}}
 
-function xtr(pts,w,bev,sx){const s=new THREE.Shape();pts.forEach((p,i)=>i?s.lineTo(p[0]*sx,p[1]):s.moveTo(p[0]*sx,p[1]));const d=w-bev*2,gm=new THREE.ExtrudeGeometry(s,{depth:d,bevelEnabled:true,bevelThickness:bev,bevelSize:bev,bevelSegments:4,curveSegments:4});gm.translate(0,0,-d/2);gm.rotateY(Math.PI/2);return gm}
+var XC=new Map();function chaikin(P,it){for(let k=0;k<it;k++){const O=[];for(let i=0;i<P.length;i++){const a=P[i],b=P[(i+1)%P.length];O.push([.75*a[0]+.25*b[0],.75*a[1]+.25*b[1]],[.25*a[0]+.75*b[0],.25*a[1]+.75*b[1]])}P=O}return P}
+function smoothN(gm){const p=gm.attributes.position,n=gm.attributes.normal,m=new Map(),k=i=>Math.round(p.getX(i)*500)+','+Math.round(p.getY(i)*500)+','+Math.round(p.getZ(i)*500);for(let i=0;i<p.count;i++){const key=k(i);let a=m.get(key);if(!a)m.set(key,a=[0,0,0]);a[0]+=n.getX(i);a[1]+=n.getY(i);a[2]+=n.getZ(i)}for(let i=0;i<p.count;i++){const a=m.get(k(i)),l=Math.hypot(a[0],a[1],a[2])||1;n.setXYZ(i,a[0]/l,a[1]/l,a[2]/l)}}
+function xtr(pts,w,bev,sx){const key=pts.join(';')+'|'+w+'|'+bev+'|'+sx;if(XC.has(key))return XC.get(key);const s=new THREE.Shape();chaikin(pts,2).forEach((p,i)=>i?s.lineTo(p[0]*sx,p[1]):s.moveTo(p[0]*sx,p[1]));const d=w-bev*2,gm=new THREE.ExtrudeGeometry(s,{depth:d,bevelEnabled:true,bevelThickness:bev,bevelSize:bev,bevelSegments:4,curveSegments:4});gm.translate(0,0,-d/2);gm.rotateY(Math.PI/2);smoothN(gm);XC.set(key,gm);return gm}
 function mkCar(c){const w=c.w,len=c.len,sx=len/4.4,G=new THREE.Group(),PH_=(co,sh)=>new THREE.MeshPhongMaterial({color:co,shininess:sh||60,specular:0x333333}),B=(a,b,d)=>new THREE.BoxGeometry(a,b,d),
  add=(gm,m,x,y,z)=>{const o=new THREE.Mesh(gm,m);o.position.set(x,y,z);o.castShadow=true;G.add(o);return o},
  tm=new THREE.MeshBasicMaterial({color:0x8a1010}),hm=new THREE.MeshBasicMaterial({color:0xfff4d0}),dk=PH_(0x141414,8),glass=new THREE.MeshPhongMaterial({color:0x0d1a24,shininess:120,specular:0x8899aa}),paint=PH_(new THREE.Color(c.col),80),
@@ -132,7 +134,7 @@ function mkCar(c){const w=c.w,len=c.len,sx=len/4.4,G=new THREE.Group(),PH_=(co,s
   {b:[[-2.2,.36],[-2.2,1.0],[.9,1.0],[1.9,.9],[2.2,.7],[2.2,.36]],c:[[-2.1,1.0],[-2.0,1.75],[.9,1.75],[1.5,1.0]],r:.35}],
   kd=K4[c.kind!=null?c.kind:Math.abs((c.z*7)|0)%4],cb=kd.c,top=cb[1][1];
   add(xtr(kd.b,w*.99,.14,sx),paint,0,0,0);add(xtr(cb,w*.84,.04,sx),glass,0,0,0);
-  add(B(w*.82,.12,(cb[2][0]-cb[1][0])*sx),paint,0,top+.05,-(cb[1][0]+cb[2][0])/2*sx);
+  add(xtr([[cb[1][0],top+.05],[cb[2][0],top+.05],[cb[2][0]-.15,top-.16],[cb[1][0]+.15,top-.16]],w*.86,.06,sx),paint,0,0,0);
   const by=kd.b[1][1]*.85;
   for(const s of[-1,1]){add(B(.44,.13,.06),hm,s*w*.33,by-.12,-len/2+.01);add(B(.5,.13,.06),tm,s*w*.34,by,len/2-.01);add(B(.18,.1,.12),paint,s*(w*.5+.03),kd.b[3][1]+.02,-.65*sx);wheel(s*(w/2-.03),-len*.3,kd.r,.22);wheel(s*(w/2-.03),len*.3,kd.r,.22)}
   add(B(w*.8,.17,.04),dk,0,.55,-len/2);add(B(w*.96,.14,.1),dk,0,.4,-len/2+.03);add(B(w*.96,.14,.1),dk,0,.4,len/2-.03);
@@ -148,20 +150,25 @@ const plr=mkCar({w:1.8,len:4.4,tall:false,col:'#d62828',isP:1});SC.add(plr);
 // ====== MUNDO 3D: terreno continuo, carreteras, vegetación ======
 var GRID=null,CG=null,HPL=0,camH=0;
 const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t)};
-function mkGrid(){GRID=new Map();CG=new Map();
+function mkGrid(){GRID=new Map();CG=new Map();FNC=new Map();
  for(let i=0;i<N;i++){if(PCE[i]<0)continue;const k=Math.floor(PXa[i]/16)*100003+Math.floor(PZa[i]/16);let a=GRID.get(k);if(!a)GRID.set(k,a=[]);a.push(i);
   const k2=Math.floor(PXa[i]/64)*100003+Math.floor(PZa[i]/64);let c=CG.get(k2);if(!c)CG.set(k2,c={y:0,n:0,x:0,z:0,j:i});c.y+=Y[i];c.n++;c.x+=PXa[i];c.z+=PZa[i]}}
 function nearRow(i,x,n,r,gap){gap=gap==null?20:gap;let best=-1,bd=r*r;const cx=Math.floor(x/16),cy=Math.floor(n/16),R2=Math.ceil(r/16),pi=i>=0?PCE[i]:-9;
  for(let a=-R2;a<=R2;a++)for(let b=-R2;b<=R2;b++){const A=GRID.get((cx+a)*100003+cy+b);if(!A)continue;for(const j of A){if(PCE[j]===pi&&Math.abs(j-i)<=gap)continue;const d=(PXa[j]-x)**2+(PZa[j]-n)**2;if(d<bd){bd=d;best=j}}}return best}
-function hf(x,n){const cx=Math.floor(x/16),cy=Math.floor(n/16);let bj=-1,bd=1e12,sw=0,sy=0;
- for(let a=-4;a<=4;a++)for(let b=-4;b<=4;b++){const A=GRID.get((cx+a)*100003+cy+b);if(!A)continue;for(const j of A){const d=(PXa[j]-x)**2+(PZa[j]-n)**2;if(d<bd){bd=d;bj=j}if(d<3136){const w=1/(d+16);sw+=w;sy+=w*Y[j]}}}
+var FNC=null;
+function FN(i,j){const k=i*100003+j;let v=FNC.get(k);if(v)return v;const x=i*64,n=j*64;let w2=0,y2=0,bb=1e12,bj=-1,found=0;
+ for(let r=0;r<=9;r++){for(let a=-r;a<=r;a++)for(let b=-r;b<=r;b++){if(Math.max(Math.abs(a),Math.abs(b))!==r)continue;const C=CG.get((i+a)*100003+j+b);if(!C)continue;found++;const mx=C.x/C.n-x,mz=C.z/C.n-n,dd=mx*mx+mz*mz;if(dd<bb){bb=dd;bj=C.j}const w=1/(dd+4096);w2+=w;y2+=w*(C.y/C.n)}if(found>0&&r>=Math.min(9,Math.ceil(Math.sqrt(bb)/64)+1))break}
+ v=found?{y:y2/w2,j:bj}:{y:HPL,j:-1};FNC.set(k,v);return v}
+function hf(x,n){const cx=Math.floor(x/16),cy=Math.floor(n/16);let bj=-1,bd=1e12,sw=0,sy=0,ym=1e9;
+ for(let a=-4;a<=4;a++)for(let b=-4;b<=4;b++){const A=GRID.get((cx+a)*100003+cy+b);if(!A)continue;for(const j of A){const d=(PXa[j]-x)**2+(PZa[j]-n)**2;if(d<bd){bd=d;bj=j}if(d<3136){const w=1/(d+16);sw+=w;sy+=w*Y[j];if(d<100&&Y[j]<ym)ym=Y[j]}}}
  let d,base,j=bj;
  if(bj>=0&&bd<3136){d=Math.sqrt(bd);base=sy/sw}
- else{const c2=Math.floor(x/64),d2=Math.floor(n/64);let w2=0,y2=0,bb=1e12,found=0;
-  for(let r=0;r<=9;r++){for(let a=-r;a<=r;a++)for(let b=-r;b<=r;b++){if(Math.max(Math.abs(a),Math.abs(b))!==r)continue;const C=CG.get((c2+a)*100003+d2+b);if(!C)continue;found++;const mx=C.x/C.n-x,mz=C.z/C.n-n,dd=mx*mx+mz*mz;if(dd<bb){bb=dd;j=C.j}const w=1/(dd+4096);w2+=w;y2+=w*(C.y/C.n)}if(found>0&&r>=Math.min(9,Math.ceil(Math.sqrt(bb)/64)+1))break}
-  if(!found)return{h:HPL,j:Math.max(0,bj),d:9999,s:1};d=Math.sqrt(bb);base=y2/w2}
- const hills=(Math.sin(x/310+n/270)*.5+Math.sin(x/130-n/170+1)*.3+Math.sin((x+n)/700)*.8+Math.sin(x/47+n/61)*.08)*Math.min(60,6+d*.16),t=smooth(5.2,18,d);
- let h=d<=5.2?Y[j]-.35:(Y[j]-.35)*(1-t)+(base+hills)*t;const e=smooth(420,560,d);h=h*(1-e)+HPL*e;
+ else{const i=Math.floor(x/64),k=Math.floor(n/64),fx=x/64-i,fy=n/64-k,a=FN(i,k),b=FN(i+1,k),c=FN(i,k+1),e=FN(i+1,k+1),all=[a,b,c,e];
+  if(all.every(q=>q.j<0))return{h:HPL,j:Math.max(0,bj),d:9999,s:1};
+  const yv=all.map(q=>q.j<0?HPL:q.y);base=(yv[0]*(1-fx)+yv[1]*fx)*(1-fy)+(yv[2]*(1-fx)+yv[3]*fx)*fy;
+  j=fx<.5?(fy<.5?a.j:c.j):(fy<.5?b.j:e.j);if(j<0)j=all.find(q=>q.j>=0).j;d=Math.hypot(x-PXa[j],n-PZa[j])}
+ const DC=22,hills=(Math.sin(x/310+n/270)*.5+Math.sin(x/130-n/170+1)*.3+Math.sin((x+n)/700)*.8+Math.sin(x/47+n/61)*.08)*Math.min(60,6+Math.max(0,d-DC)*.16),t=smooth(DC,DC+55,d),yr0=sw>0?sy/sw:Y[j],yr=ym<1e9?(d<=10?ym:ym+(yr0-ym)*smooth(10,16,d)):yr0;
+ let h=(yr-.55-Math.min(1.8,Math.abs(Y[Math.min(N-1,j+1)]-Y[Math.max(0,j-1)])/8*7))*(1-t)+(base+hills)*t;const e=smooth(420,560,d);h=h*(1-e)+HPL*e;
  return{h,j,d,s:((x-PXa[j])*Math.cos(PH[j])-(n-PZa[j])*Math.sin(PH[j]))>=0?1:-1}}
 function mkMini(){let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;for(let i=0;i<N;i+=3){if(PCE[i]<0)continue;x0=Math.min(x0,PXa[i]);x1=Math.max(x1,PXa[i]);y0=Math.min(y0,PZa[i]);y1=Math.max(y1,PZa[i])}
  const bw=170,bh=170,sc=Math.min(bw/(x1-x0||1),bh/(y1-y0||1)),ox=W-bw-30+(bw-(x1-x0)*sc)/2,oy=80+(bh-(y1-y0)*sc)/2;
