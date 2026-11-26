@@ -1,7 +1,0 @@
-.rear-mirror[hidden]{display:none!important}
-.rear-mirror{display:none;position:absolute;z-index:3;left:50%;top:12px;transform:translateX(-50%);width:clamp(140px,34%,440px);aspect-ratio:4;border:5px solid #20272b;border-radius:12px;box-shadow:0 3px 9px #0009,inset 0 0 0 1px #8c969c;pointer-events:none;box-sizing:content-box}
-body.play .rear-mirror:not([hidden]){display:block}
-.rear-mirror-view{position:absolute;inset:0;background:transparent}
-body.play.mirror-enabled .arcade-radio-toast{top:var(--rear-mirror-bottom,150px)}
-@media(max-width:620px){.rear-mirror{top:6px;border-width:3px;border-radius:7px}}
-@media(max-width:620px){body.play.mirror-enabled .arcade-radio-hud-text{display:none}body.play.mirror-enabled .arcade-radio-hud{max-width:none;padding:4px}body.play.mirror-enabled .arcade-radio-hud-logo{width:24px;height:24px}}
