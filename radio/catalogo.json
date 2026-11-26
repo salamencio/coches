@@ -1,0 +1,185 @@
+[
+  {
+    "n": "Cadena SER",
+    "g": "Generalista",
+    "c": "#e30613",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENASER.mp3",
+    "w": "https://cadenaser.com"
+  },
+  {
+    "n": "COPE",
+    "g": "Generalista",
+    "c": "#00a859",
+    "u": "https://flucast31-h-cloud.flumotion.com/cope/net1.mp3",
+    "a": [
+      "https://net1-cope-rrcast.flumotion.com/cope/net1.mp3"
+    ],
+    "w": "https://www.cope.es"
+  },
+  {
+    "n": "Onda Cero",
+    "g": "Generalista",
+    "c": "#0b5ea8",
+    "u": "https://radio-atres-live.ondacero.es/api/livestream-redirect/OCAAC.aac",
+    "w": "https://www.ondacero.es",
+    "a": [
+      "https://atres-live.ondacero.es/live/ondacero/master.m3u8"
+    ]
+  },
+  {
+    "n": "RNE Radio 1",
+    "g": "Pública",
+    "c": "#c8102e",
+    "u": "https://dispatcher.rndfnk.com/crtve/rne1/main/mp3/high",
+    "a": [
+      "https://rtvelivestream.rtve.es/rtvesec/rne/rne_r1_main.m3u8"
+    ],
+    "w": "https://www.rtve.es/radio/"
+  },
+  {
+    "n": "Radio 3",
+    "g": "Pública · Música",
+    "c": "#7a2fb5",
+    "u": "https://dispatcher.rndfnk.com/crtve/rner3/main/mp3/high",
+    "a": [
+      "https://rtvelivestream.rtve.es/rtvesec/rne/rne_r3_main.m3u8"
+    ],
+    "w": "https://www.rtve.es/radio/radio3/"
+  },
+  {
+    "n": "esRadio",
+    "g": "Tertulia",
+    "c": "#ef7d00",
+    "u": "https://libertaddigital-radio-live1.flumotion.com/libertaddigital/ld-live1-high.mp3",
+    "w": "https://esradio.libertaddigital.com",
+    "a": [
+      "https://libertaddigital-radio-live1.flumotion.com/libertaddigital/ld-live1-high.aac"
+    ]
+  },
+  {
+    "n": "Los 40",
+    "g": "Música",
+    "c": "#ff2d55",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40.mp3",
+    "w": "https://los40.com"
+  },
+  {
+    "n": "Los 40 Classic",
+    "g": "Música · Clásicos",
+    "c": "#8a1c7c",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40_CLASSIC.mp3",
+    "a": [
+      "https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40_CLASSIC_SC"
+    ],
+    "w": "https://los40.com/los40_classic/"
+  },
+  {
+    "n": "Cadena Dial",
+    "g": "Música",
+    "c": "#f5a300",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENADIAL.mp3",
+    "w": "https://www.cadenadial.com/"
+  },
+  {
+    "n": "Cadena 100",
+    "g": "Música",
+    "c": "#1ca3ec",
+    "u": "https://flucast31-h-cloud.flumotion.com/cope/cadena100.mp3",
+    "a": [
+      "https://cadena100-cope.flumotion.com/playlist.m3u8"
+    ],
+    "w": "https://www.cadena100.es"
+  },
+  {
+    "n": "Europa FM",
+    "g": "Música",
+    "c": "#009fe3",
+    "u": "https://atres-live.europafm.com/live/europafm/master.m3u8",
+    "w": "https://www.europafm.com"
+  },
+  {
+    "n": "Kiss FM",
+    "g": "Música",
+    "c": "#e4007c",
+    "u": "https://kissfm.kissfmradio.cires21.com/kissfm.mp3",
+    "w": "https://www.kissfm.es"
+  },
+  {
+    "n": "Hit FM",
+    "g": "Música",
+    "c": "#ff6a00",
+    "u": "https://hitfm.kissfmradio.cires21.com/hitfm.mp3",
+    "a": [],
+    "w": "https://www.hitfm.es/player/"
+  },
+  {
+    "n": "Rock FM",
+    "g": "Música · Rock",
+    "c": "#b30000",
+    "u": "https://flucast31-h-cloud.flumotion.com/cope/rockfm.mp3",
+    "a": [
+      "https://rockfm-cope-rrcast.flumotion.com/cope/rockfm.mp3"
+    ],
+    "w": "https://www.rockfm.fm"
+  },
+  {
+    "n": "Radio Galega",
+    "g": "Galicia · Pública",
+    "gal": 1,
+    "c": "#0a5ba8",
+    "u": "https://crtvg-radiogalega-hls.flumotion.cloud/playlist.m3u8",
+    "w": "https://agalegaaudio.gal"
+  },
+  {
+    "n": "Radio Galega Música",
+    "g": "Galicia · Música",
+    "gal": 1,
+    "c": "#0a5ba8",
+    "u": "https://crtvg-radiogalega-musica-hls.flumotion.cloud/playlist.m3u8",
+    "w": "https://agalegaaudio.gal"
+  },
+  {
+    "n": "SER Radio Coruña",
+    "g": "Galicia",
+    "gal": 1,
+    "c": "#e30613",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/SER_ASO_CORUNA.mp3",
+    "w": "https://cadenaser.com/radio-coruna/"
+  },
+  {
+    "n": "SER Ferrol",
+    "g": "Galicia",
+    "gal": 1,
+    "c": "#e30613",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/SER_ASO_FERROL.mp3",
+    "w": "https://cadenaser.com/radio-ferrol/"
+  },
+  {
+    "n": "SER Radio Vigo",
+    "g": "Galicia",
+    "gal": 1,
+    "c": "#e30613",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/SER_ASO_VIGO.mp3",
+    "a": [],
+    "w": "https://cadenaser.com/radio-vigo/"
+  },
+  {
+    "n": "CUAC FM",
+    "g": "Galicia · A Coruña",
+    "gal": 1,
+    "c": "#f2b705",
+    "u": "https://streaming.cuacfm.org/cuacfm-128k.mp3",
+    "w": "https://cuacfm.org"
+  },
+  {
+    "n": "SER Baixo Miño",
+    "g": "Galicia",
+    "gal": 1,
+    "c": "#e30613",
+    "u": "https://playerservices.streamtheworld.com/api/livestream-redirect/SER_ASO_BAIXOMINO.mp3",
+    "a": [
+      "https://playerservices.streamtheworld.com/api/livestream-redirect/SER_ASO_BAIXOMINOAAC.aac"
+    ],
+    "w": "https://cadenaser.com/ser-baixo-mino/"
+  }
+]
