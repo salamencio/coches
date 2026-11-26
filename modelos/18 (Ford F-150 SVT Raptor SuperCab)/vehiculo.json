@@ -1,0 +1,157 @@
+{
+  "delivery": "18",
+  "vehicle": "Ford F-150 SVT Raptor SuperCab",
+  "dimensions": {
+    "length": 5.611,
+    "bodyWidth": 2.192,
+    "height": 1.991,
+    "wheelbase": 3.378
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_18_LOD0.glb",
+      "lod": 0,
+      "triangles": 14248,
+      "uniqueTriangles": 11050,
+      "materials": 14,
+      "drawCallsPerPass": 20,
+      "nodes": 18,
+      "bytes": 488480,
+      "sha256": "a3dd859b56dc5feec69a29fbb320263a313d8f283a078040d372663e3086d8f0"
+    },
+    {
+      "file": "Entrega_18_LOD1.glb",
+      "lod": 1,
+      "triangles": 5432,
+      "uniqueTriangles": 4082,
+      "materials": 14,
+      "drawCallsPerPass": 20,
+      "nodes": 18,
+      "bytes": 265180,
+      "sha256": "5c9cdfa6982799c54fdce3871fae6e5f2596f191abc0c7751e88d84e73c6bd82"
+    },
+    {
+      "file": "Entrega_18_LOD2.glb",
+      "lod": 2,
+      "triangles": 1660,
+      "uniqueTriangles": 1108,
+      "materials": 11,
+      "drawCallsPerPass": 15,
+      "nodes": 17,
+      "bytes": 182824,
+      "sha256": "18449b76354f7e5f42d9a3933a265355e7ad54a239fed03dc55021a95f0a7b3b"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_FL",
+      "translation": [
+        -0.90968,
+        0.42,
+        -1.689
+      ]
+    },
+    {
+      "name": "Wheel_FL",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.42,
+        "side": "L",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Steering_FR",
+      "translation": [
+        0.90968,
+        0.42,
+        -1.689
+      ]
+    },
+    {
+      "name": "Wheel_FR",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.42,
+        "side": "R",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_RL",
+      "translation": [
+        -0.90968,
+        0.42,
+        1.689
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.42,
+        "side": "L",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_RR",
+      "translation": [
+        0.90968,
+        0.42,
+        1.689
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.42,
+        "side": "R",
+        "axle": 1
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified"
+  ],
+  "revision": 2,
+  "revisionChanges": "Parabrisas retrasado, capó más largo y cabina SuperCab más corta. Puerta principal y ventanilla de cuarto trasero separadas por un pilar; caja abierta conservada."
+}

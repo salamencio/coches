@@ -1,0 +1,270 @@
+{
+  "delivery": "19d",
+  "vehicle": "Renault Magnum Cisterna Asturiana",
+  "dimensions": {
+    "length": 18.5,
+    "bodyWidth": 2.55,
+    "height": 4.0,
+    "wheelbase": 3.6
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_19d_LOD0.glb",
+      "lod": 0,
+      "triangles": 19151,
+      "uniqueTriangles": 12437,
+      "materials": 17,
+      "drawCallsPerPass": 43,
+      "nodes": 29,
+      "bytes": 645492,
+      "sha256": "9a24212f0921aa3e4e8db488d43a3bba98e1ac4ff30839fad2dcb1f8c8ebf336"
+    },
+    {
+      "file": "Entrega_19d_LOD1.glb",
+      "lod": 1,
+      "triangles": 9072,
+      "uniqueTriangles": 5814,
+      "materials": 17,
+      "drawCallsPerPass": 43,
+      "nodes": 29,
+      "bytes": 418376,
+      "sha256": "e6c77cc49d0faa8a36cc720405f29ef9de04e104f347f9a3a7f0ca8653f1e128"
+    },
+    {
+      "file": "Entrega_19d_LOD2.glb",
+      "lod": 2,
+      "triangles": 3400,
+      "uniqueTriangles": 2140,
+      "materials": 14,
+      "drawCallsPerPass": 29,
+      "nodes": 29,
+      "bytes": 291884,
+      "sha256": "ba4abf3ad0d8c8b8031064429ea09f9ee09ba2bce12cdf5e89b8c2a76307c3ac"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_FL",
+      "translation": [
+        -1.02,
+        0.51,
+        -7.863333333333333
+      ]
+    },
+    {
+      "name": "Wheel_FL",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "L",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Steering_FR",
+      "translation": [
+        1.02,
+        0.51,
+        -7.863333333333333
+      ]
+    },
+    {
+      "name": "Wheel_FR",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "R",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_RL",
+      "translation": [
+        -1.02,
+        0.51,
+        -4.263333333333334
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "L",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_RR",
+      "translation": [
+        1.02,
+        0.51,
+        -4.263333333333334
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "R",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Hitch_Trailer",
+      "translation": [
+        0,
+        0,
+        -4.95
+      ],
+      "extras": {
+        "articulationAxis": "Y"
+      }
+    },
+    {
+      "name": "Wheel_Trailer_1L",
+      "translation": [
+        -1.02,
+        0.51,
+        10.25
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "L",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_Trailer_1R",
+      "translation": [
+        1.02,
+        0.51,
+        10.25
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "R",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_Trailer_2L",
+      "translation": [
+        -1.02,
+        0.51,
+        11.55
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "L",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_Trailer_2R",
+      "translation": [
+        1.02,
+        0.51,
+        11.55
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "R",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_Trailer_3L",
+      "translation": [
+        -1.02,
+        0.51,
+        12.85
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "L",
+        "axle": 2
+      }
+    },
+    {
+      "name": "Wheel_Trailer_3R",
+      "translation": [
+        1.02,
+        0.51,
+        12.85
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.51,
+        "side": "R",
+        "axle": 2
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified"
+  ],
+  "revision": 6,
+  "revisionChanges": "Cabina Magnum específica: módulo superior alto y vertical, separación del bloque inferior, parabrisas casi recto, parrilla ancha con rombo Renault, ópticas verticales y escalones exteriores. Cisterna de leche en acero gris satinado, soldaduras y tuberías; rótulo Central Lechera Asturiana con montaña azul, texto a dos niveles y aplicación curva sobre el depósito."
+}

@@ -1,0 +1,157 @@
+{
+  "delivery": "16",
+  "vehicle": "Citroen C15",
+  "dimensions": {
+    "length": 3.995,
+    "bodyWidth": 1.636,
+    "height": 1.801,
+    "wheelbase": 2.74
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_16_LOD0.glb",
+      "lod": 0,
+      "triangles": 24820,
+      "uniqueTriangles": 21574,
+      "materials": 13,
+      "drawCallsPerPass": 20,
+      "nodes": 17,
+      "bytes": 919492,
+      "sha256": "c957ed643401e687379e4e27da2dc017c006b7b55d4abebf8b5240fa3f9b46a4"
+    },
+    {
+      "file": "Entrega_16_LOD1.glb",
+      "lod": 1,
+      "triangles": 7512,
+      "uniqueTriangles": 6378,
+      "materials": 13,
+      "drawCallsPerPass": 20,
+      "nodes": 17,
+      "bytes": 394044,
+      "sha256": "b94a008ceb2462f809c85172741ea2b37816b9ad6661ebef69af48c3f039315e"
+    },
+    {
+      "file": "Entrega_16_LOD2.glb",
+      "lod": 2,
+      "triangles": 2422,
+      "uniqueTriangles": 2002,
+      "materials": 10,
+      "drawCallsPerPass": 14,
+      "nodes": 16,
+      "bytes": 252056,
+      "sha256": "b33fee72ff77e971166c750cf25590f95a228ca03a6d9ef6e5e8caa612124b09"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_FL",
+      "translation": [
+        -0.68712,
+        0.285,
+        -1.37
+      ]
+    },
+    {
+      "name": "Wheel_FL",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.285,
+        "side": "L",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Steering_FR",
+      "translation": [
+        0.68712,
+        0.285,
+        -1.37
+      ]
+    },
+    {
+      "name": "Wheel_FR",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.285,
+        "side": "R",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_RL",
+      "translation": [
+        -0.68712,
+        0.285,
+        1.37
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.285,
+        "side": "L",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_RR",
+      "translation": [
+        0.68712,
+        0.285,
+        1.37
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.285,
+        "side": "R",
+        "axle": 1
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified"
+  ],
+  "revision": 2,
+  "revisionChanges": "Cabina baja tipo Visa y caja elevada con transición de techo; paragolpes y parrilla propios, ventanilla lateral pequeña, llantas de acero y espejos rectangulares."
+}
