@@ -1,0 +1,121 @@
+{
+  "delivery": "11b",
+  "vehicle": "Yamaha YZF-R1 negra",
+  "dimensions": {
+    "length": 2.1,
+    "bodyWidth": 0.79,
+    "height": 1.24,
+    "wheelbase": 1.43
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_11b_LOD0.glb",
+      "lod": 0,
+      "triangles": 7574,
+      "uniqueTriangles": 7574,
+      "materials": 13,
+      "drawCallsPerPass": 20,
+      "nodes": 14,
+      "bytes": 340532,
+      "sha256": "29ee76130e78428a0b743c0acd686e4b9928411d078da804b79e1b55fafa9072"
+    },
+    {
+      "file": "Entrega_11b_LOD1.glb",
+      "lod": 1,
+      "triangles": 2260,
+      "uniqueTriangles": 2260,
+      "materials": 13,
+      "drawCallsPerPass": 20,
+      "nodes": 14,
+      "bytes": 182908,
+      "sha256": "48db9acfe79bf847f1c1d0042a9cc6b46cc1457c24724359be992ee96120c75c"
+    },
+    {
+      "file": "Entrega_11b_LOD2.glb",
+      "lod": 2,
+      "triangles": 728,
+      "uniqueTriangles": 728,
+      "materials": 11,
+      "drawCallsPerPass": 14,
+      "nodes": 14,
+      "bytes": 139412,
+      "sha256": "858f312efbb942faa175c9c7efc98346d6a32dc43901e221828e670271643550"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_F",
+      "translation": [
+        0,
+        0.94,
+        -0.5449999999999999
+      ],
+      "extras": {
+        "steeringAxis": "Y",
+        "note": "head pivot, fork rake approximated in geometry"
+      }
+    },
+    {
+      "name": "Wheel_F",
+      "translation": [
+        0,
+        -0.625,
+        -0.17
+      ],
+      "extras": {
+        "radius": 0.315,
+        "rollingAxis": "X",
+        "side": "R"
+      }
+    },
+    {
+      "name": "Wheel_R",
+      "translation": [
+        0,
+        0.315,
+        0.715
+      ],
+      "extras": {
+        "radius": 0.315,
+        "rollingAxis": "X",
+        "side": "R"
+      }
+    },
+    {
+      "name": "Seat_Rider",
+      "translation": [
+        0,
+        1.01,
+        0.28
+      ],
+      "extras": {
+        "purpose": "attach existing game rider; rider not included"
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified",
+    "Motorcycle dimensions approximate as requested; existing game rider can attach to Seat_Rider"
+  ]
+}

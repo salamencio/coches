@@ -1,0 +1,121 @@
+{
+  "delivery": "11a",
+  "vehicle": "Suzuki GSX-R azul",
+  "dimensions": {
+    "length": 2.12,
+    "bodyWidth": 0.8,
+    "height": 1.27,
+    "wheelbase": 1.46
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_11a_LOD0.glb",
+      "lod": 0,
+      "triangles": 7574,
+      "uniqueTriangles": 7574,
+      "materials": 14,
+      "drawCallsPerPass": 21,
+      "nodes": 14,
+      "bytes": 341352,
+      "sha256": "522f052b5d7c53350ea30860d0a035370a0d384200abf9ed61cd6a8368e61ae6"
+    },
+    {
+      "file": "Entrega_11a_LOD1.glb",
+      "lod": 1,
+      "triangles": 2260,
+      "uniqueTriangles": 2260,
+      "materials": 14,
+      "drawCallsPerPass": 21,
+      "nodes": 14,
+      "bytes": 183732,
+      "sha256": "8e452f635111612aa51cade4979d44d0f695cc5745acb5c613f5a114438151d4"
+    },
+    {
+      "file": "Entrega_11a_LOD2.glb",
+      "lod": 2,
+      "triangles": 728,
+      "uniqueTriangles": 728,
+      "materials": 12,
+      "drawCallsPerPass": 15,
+      "nodes": 14,
+      "bytes": 140352,
+      "sha256": "97f6df9bcebf7b47d2bd367afcce624215ecdaed8639f407ac4fc6c70eba36ab"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_F",
+      "translation": [
+        0,
+        0.94,
+        -0.5599999999999999
+      ],
+      "extras": {
+        "steeringAxis": "Y",
+        "note": "head pivot, fork rake approximated in geometry"
+      }
+    },
+    {
+      "name": "Wheel_F",
+      "translation": [
+        0,
+        -0.625,
+        -0.17
+      ],
+      "extras": {
+        "radius": 0.315,
+        "rollingAxis": "X",
+        "side": "R"
+      }
+    },
+    {
+      "name": "Wheel_R",
+      "translation": [
+        0,
+        0.315,
+        0.73
+      ],
+      "extras": {
+        "radius": 0.315,
+        "rollingAxis": "X",
+        "side": "R"
+      }
+    },
+    {
+      "name": "Seat_Rider",
+      "translation": [
+        0,
+        1.01,
+        0.28
+      ],
+      "extras": {
+        "purpose": "attach existing game rider; rider not included"
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified",
+    "Motorcycle dimensions approximate as requested; existing game rider can attach to Seat_Rider"
+  ]
+}

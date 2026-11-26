@@ -1,0 +1,157 @@
+{
+  "delivery": "5",
+  "vehicle": "Citroen Xantia Fase II",
+  "dimensions": {
+    "length": 4.524,
+    "bodyWidth": 1.755,
+    "height": 1.398,
+    "wheelbase": 2.74
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_5_LOD0.glb",
+      "lod": 0,
+      "triangles": 32491,
+      "uniqueTriangles": 28927,
+      "materials": 14,
+      "drawCallsPerPass": 21,
+      "nodes": 17,
+      "bytes": 1305276,
+      "sha256": "927c7cf268b1f5ccef89ee29a4917fa940840a5f5f531ae4e445d65b698f4fc0"
+    },
+    {
+      "file": "Entrega_5_LOD1.glb",
+      "lod": 1,
+      "triangles": 11895,
+      "uniqueTriangles": 10527,
+      "materials": 14,
+      "drawCallsPerPass": 21,
+      "nodes": 17,
+      "bytes": 593000,
+      "sha256": "0d20f3d8de0a56de7ad4e1efe39491636b5a246404c2854b593cf0fb18ac242a"
+    },
+    {
+      "file": "Entrega_5_LOD2.glb",
+      "lod": 2,
+      "triangles": 3874,
+      "uniqueTriangles": 3352,
+      "materials": 11,
+      "drawCallsPerPass": 15,
+      "nodes": 16,
+      "bytes": 365460,
+      "sha256": "6a66f08b686113c107e602ae37be02f29c7e2d239a6091d97017b419275cd7c0"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_FL",
+      "translation": [
+        -0.7634249999999999,
+        0.305,
+        -1.37
+      ]
+    },
+    {
+      "name": "Wheel_FL",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.305,
+        "side": "L",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Steering_FR",
+      "translation": [
+        0.7634249999999999,
+        0.305,
+        -1.37
+      ]
+    },
+    {
+      "name": "Wheel_FR",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.305,
+        "side": "R",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_RL",
+      "translation": [
+        -0.7634249999999999,
+        0.305,
+        1.37
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.305,
+        "side": "L",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_RR",
+      "translation": [
+        0.7634249999999999,
+        0.305,
+        1.37
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.305,
+        "side": "R",
+        "axle": 1
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified"
+  ],
+  "revision": 7,
+  "revisionChanges": "Xantia Fase II 1998–2001 rehecho: carrocería baja y en cuña, capó alargado, portón tendido, faros rectangulares, doble chevrón y pilotos traseros propios."
+}
