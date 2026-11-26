@@ -1,0 +1,123 @@
+{
+  "delivery": "11d",
+  "vehicle": "Kawasaki Z900 verde",
+  "dimensions": {
+    "length": 2.1,
+    "bodyWidth": 0.825,
+    "height": 1.16,
+    "wheelbase": 1.455
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_11d_LOD0.glb",
+      "lod": 0,
+      "triangles": 8060,
+      "uniqueTriangles": 8060,
+      "materials": 10,
+      "drawCallsPerPass": 17,
+      "nodes": 13,
+      "bytes": 356648,
+      "sha256": "744082141a8439e6b0a72a63fc931400119678678dacc70a604cae649a7316b5"
+    },
+    {
+      "file": "Entrega_11d_LOD1.glb",
+      "lod": 1,
+      "triangles": 2464,
+      "uniqueTriangles": 2464,
+      "materials": 10,
+      "drawCallsPerPass": 17,
+      "nodes": 13,
+      "bytes": 189500,
+      "sha256": "5834dfd5a7ae90e31ec2eb7d4b499bc0f9fe40eb5e09b9d764f74d9ae0ec04cb"
+    },
+    {
+      "file": "Entrega_11d_LOD2.glb",
+      "lod": 2,
+      "triangles": 820,
+      "uniqueTriangles": 820,
+      "materials": 8,
+      "drawCallsPerPass": 12,
+      "nodes": 13,
+      "bytes": 145012,
+      "sha256": "55f1efecceac52a0a4b01be4d146615e0356cecac50b7684a5703e719826156e"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_F",
+      "translation": [
+        0,
+        0.94,
+        -0.5575
+      ],
+      "extras": {
+        "steeringAxis": "Y",
+        "note": "head pivot, fork rake approximated in geometry"
+      }
+    },
+    {
+      "name": "Wheel_F",
+      "translation": [
+        0,
+        -0.625,
+        -0.17
+      ],
+      "extras": {
+        "radius": 0.315,
+        "rollingAxis": "X",
+        "side": "R"
+      }
+    },
+    {
+      "name": "Wheel_R",
+      "translation": [
+        0,
+        0.315,
+        0.7275
+      ],
+      "extras": {
+        "radius": 0.315,
+        "rollingAxis": "X",
+        "side": "R"
+      }
+    },
+    {
+      "name": "Seat_Rider",
+      "translation": [
+        0,
+        1.01,
+        0.28
+      ],
+      "extras": {
+        "purpose": "attach existing game rider; rider not included"
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified",
+    "Motorcycle dimensions approximate as requested; existing game rider can attach to Seat_Rider"
+  ],
+  "revision": 3,
+  "revisionChanges": "Óptica angular doble ajustada a la superficie de la carcasa, ceja verde y soportes físicos."
+}
