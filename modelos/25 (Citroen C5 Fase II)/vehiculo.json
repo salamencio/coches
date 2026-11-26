@@ -1,0 +1,157 @@
+{
+  "delivery": "25",
+  "vehicle": "Citroen C5 Fase II",
+  "dimensions": {
+    "length": 4.745,
+    "bodyWidth": 1.78,
+    "height": 1.476,
+    "wheelbase": 2.75
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_25_LOD0.glb",
+      "lod": 0,
+      "triangles": 26155,
+      "uniqueTriangles": 23059,
+      "materials": 13,
+      "drawCallsPerPass": 20,
+      "nodes": 17,
+      "bytes": 1018984,
+      "sha256": "e041f86dc1648134fbf1712be9c744b0a0b43cff946095ac5017ccc296e50f31"
+    },
+    {
+      "file": "Entrega_25_LOD1.glb",
+      "lod": 1,
+      "triangles": 8380,
+      "uniqueTriangles": 7312,
+      "materials": 13,
+      "drawCallsPerPass": 20,
+      "nodes": 17,
+      "bytes": 448592,
+      "sha256": "4a007d70532cbe70128f287f7175dd39c61d3f6eda16fe1394e31e38bd3808b6"
+    },
+    {
+      "file": "Entrega_25_LOD2.glb",
+      "lod": 2,
+      "triangles": 2912,
+      "uniqueTriangles": 2390,
+      "materials": 10,
+      "drawCallsPerPass": 14,
+      "nodes": 16,
+      "bytes": 288004,
+      "sha256": "9cd238d5fad28ce857614a45af29ccfc0a4be68d13d00a2b21bc6bdf68810c77"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_FL",
+      "translation": [
+        -0.7565,
+        0.32,
+        -1.375
+      ]
+    },
+    {
+      "name": "Wheel_FL",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.32,
+        "side": "L",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Steering_FR",
+      "translation": [
+        0.7565,
+        0.32,
+        -1.375
+      ]
+    },
+    {
+      "name": "Wheel_FR",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.32,
+        "side": "R",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_RL",
+      "translation": [
+        -0.7565,
+        0.32,
+        1.375
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.32,
+        "side": "L",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_RR",
+      "translation": [
+        0.7565,
+        0.32,
+        1.375
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.32,
+        "side": "R",
+        "axle": 1
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified"
+  ],
+  "revision": 4,
+  "revisionChanges": "Carrocería C5 conservada; se elimina la forma recortada de la lente mediante triángulos coincidentes con la superficie real."
+}

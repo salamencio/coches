@@ -1,0 +1,155 @@
+{
+  "delivery": "23",
+  "vehicle": "Iveco Daily Indcar Wing Rias Baixas",
+  "dimensions": {
+    "length": 8.05,
+    "bodyWidth": 2.4,
+    "height": 3.1,
+    "wheelbase": 4.75
+  },
+  "coordinates": {
+    "units": "metres",
+    "up": "+Y",
+    "front": "-Z",
+    "groundY": 0
+  },
+  "lods": [
+    {
+      "file": "Entrega_23_LOD0.glb",
+      "lod": 0,
+      "triangles": 19136,
+      "uniqueTriangles": 16154,
+      "materials": 16,
+      "drawCallsPerPass": 22,
+      "nodes": 18,
+      "bytes": 685648,
+      "sha256": "c4cbdc4aa1f779f7b15d891e810eea48135849b621749b12c39b2517ca7dfbaa"
+    },
+    {
+      "file": "Entrega_23_LOD1.glb",
+      "lod": 1,
+      "triangles": 5892,
+      "uniqueTriangles": 4758,
+      "materials": 16,
+      "drawCallsPerPass": 22,
+      "nodes": 18,
+      "bytes": 305512,
+      "sha256": "f596265867a32d192c6f546c3e4db7d0241e2e20bbb0edcd8a85544a954b8c1b"
+    },
+    {
+      "file": "Entrega_23_LOD2.glb",
+      "lod": 2,
+      "triangles": 2036,
+      "uniqueTriangles": 1616,
+      "materials": 12,
+      "drawCallsPerPass": 16,
+      "nodes": 17,
+      "bytes": 201292,
+      "sha256": "7ae9af4dd0f45cd351dc86d4b494c09ac81420e3935e8b991daf82a03d19edda"
+    }
+  ],
+  "rig": [
+    {
+      "name": "Steering_FL",
+      "translation": [
+        -0.972,
+        0.365,
+        -2.375
+      ]
+    },
+    {
+      "name": "Wheel_FL",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.365,
+        "side": "L",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Steering_FR",
+      "translation": [
+        0.972,
+        0.365,
+        -2.375
+      ]
+    },
+    {
+      "name": "Wheel_FR",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.365,
+        "side": "R",
+        "axle": 0
+      }
+    },
+    {
+      "name": "Wheel_RL",
+      "translation": [
+        -0.972,
+        0.365,
+        2.375
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.365,
+        "side": "L",
+        "axle": 1
+      }
+    },
+    {
+      "name": "Wheel_RR",
+      "translation": [
+        0.972,
+        0.365,
+        2.375
+      ],
+      "extras": {
+        "rollingAxis": "X",
+        "radius": 0.365,
+        "side": "R",
+        "axle": 1
+      }
+    }
+  ],
+  "paintMaterials": [
+    "Paint",
+    "CargoPaint",
+    "Canvas"
+  ],
+  "lampMaterials": [
+    "Headlamp",
+    "Tail",
+    "Brake",
+    "Reverse",
+    "IndicatorL",
+    "IndicatorR"
+  ],
+  "notes": [
+    "Visual game asset, not factory CAD or homologation",
+    "Approximate unspecified proportions; dimensions selected inside guide ranges",
+    "No game files modified"
+  ]
+}
